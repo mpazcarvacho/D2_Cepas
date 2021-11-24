@@ -1,0 +1,39 @@
+
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Wine</th>
+      <th scope="col">Strains</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    
+        <% @wines.each do |wine| %>
+          
+          <tr>
+                  <th scope="row"><%= wine.id %></th>
+                  <td><%= wine.name %></td>
+                  <ul>
+                  <td><%  wine.wines_strains.each_with_index do |wine_strain, index| %>
+                  
+                      <li class="bullet"><%= "#{index + 1} : #{wine_strain.strain.name} | #{wine_strain.percentage.to_i}%" %> </li>
+                  
+                  <% end %></ul></td>
+                  <td>
+                    <div class="btn btn_red">
+                      <%= link_to 'Show', wine, class: 'btn btn_red' %>
+                    </div>
+                    <div class="btn btn_red">
+                      <%= link_to 'Edit', edit_wine_path(wine), class: 'btn btn_red' %>
+                    </div>
+                    <div class="btn btn_red">
+                      <%= link_to 'Destroy', wine, class: 'btn btn_red', method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </div>
+                  </td>
+          </tr>
+
+        <% end %>
+</table>

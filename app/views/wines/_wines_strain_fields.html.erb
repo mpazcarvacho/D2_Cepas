@@ -1,0 +1,16 @@
+<%# Partial to add strains and their percentages dinamically %>
+<%# DONE add bootstrap %>
+
+<div class="nested-fields form-inline mb-3 form-control pt-3">
+  <%= f.hidden_field :_destroy %>
+
+    <%= f.select :strain_id, strains_for_select, {}, class: 'form-select form-select-sm' %>
+    <div class="form-group mb-3">
+        <%= f.label :percentage, '%', class: 'form-label' %>
+        <%= f.text_field :percentage, class: 'form-control' %>
+    </div>
+
+    <div>
+      <%= link_to "Remove", '#', class: "remove_fields"%>
+    </div>
+</div>
