@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
         redirect_to root_path, alert: "You must be a editor in to access this section"
       end
     end
-
     
   end
   

@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_26_162909) do
+ActiveRecord::Schema.define(version: 2021_11_26_192406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "magazines", force: :cascade do |t|
     t.string "Name"
@@ -27,6 +33,17 @@ ActiveRecord::Schema.define(version: 2021_11_26_162909) do
     t.string "Country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.bigint "oenologist_id"
+    t.bigint "magazine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "job_id"
+    t.index ["job_id"], name: "index_positions_on_job_id"
+    t.index ["magazine_id"], name: "index_positions_on_magazine_id"
+    t.index ["oenologist_id"], name: "index_positions_on_oenologist_id"
   end
 
   create_table "scores", force: :cascade do |t|
@@ -74,6 +91,9 @@ ActiveRecord::Schema.define(version: 2021_11_26_162909) do
     t.index ["wine_id"], name: "index_wines_strains_on_wine_id"
   end
 
+  add_foreign_key "positions", "jobs"
+  add_foreign_key "positions", "magazines"
+  add_foreign_key "positions", "oenologists"
   add_foreign_key "scores", "oenologists"
   add_foreign_key "scores", "wines"
   add_foreign_key "wines_strains", "strains"

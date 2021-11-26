@@ -8,4 +8,7 @@ class Wine < ApplicationRecord
   # DONE add validation so percentages add up to 100
   validates_with WineValidator
   
+  has_many :scores
+  has_many :oenologists, through: :scores, dependent: :destroy
+
 end
