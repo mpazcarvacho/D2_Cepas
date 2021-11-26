@@ -11,5 +11,10 @@ class ApplicationController < ActionController::Base
     end
     
   end
+
+  # Preload data
+  def run_seed
+    Rails.application.load_seed
+  end
   
 end

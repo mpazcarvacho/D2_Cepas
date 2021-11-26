@@ -17,6 +17,10 @@
 #   WinesStrain.create!(wine: @wines.sample , strain_id: @strain.sample.id, percentage:10)
 # end
 
-Job.create(name: "Editor")
-Job.create(name: "Reviewer")
-Job.create(name: "Writer")
+# Preloading data to Job Table
+
+if(!Job.any?)
+  Job.create(name: "Editor")
+  Job.create(name: "Reviewer")
+  Job.create(name: "Writer")
+end
