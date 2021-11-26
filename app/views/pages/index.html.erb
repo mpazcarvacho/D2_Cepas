@@ -6,6 +6,7 @@
       <th scope="col">#</th>
       <th scope="col">Wine</th>
       <th scope="col">Strains</th>
+      <th scope="col">Scores</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -22,6 +23,14 @@
                       <li class="bullet"><%= "#{index + 1} : #{wine_strain.strain.name} | #{wine_strain.percentage.to_i}%" %> </li>
                   
                   <% end %></ul></td>
+                  <td>
+                  <%# TODO SCORES Added %>
+                  <td><%  wine.scores.each_with_index do |score, index| %>
+                  
+                      <li class="bullet"><%= "#{index + 1} : #{score.oenologist.Name} | #{score.score}%" %> </li>
+                  
+                  <% end %></ul></td>
+                  <%# _________________________________________ %>
                   <td>
                     <div class="btn btn_red">
                       <%= link_to 'Show', wine, class: 'btn btn_red' %>

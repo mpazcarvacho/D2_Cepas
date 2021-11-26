@@ -7,7 +7,7 @@
 
     <%= f.select :oenologist_id, oenologists_for_select, {}, class: 'form-select form-select-sm' %>
     <div class="form-group mb-3">
-        <%= f.label :score, 'score', class: 'form-label' %>
+        <%= f.label :score, 'Score from 1 to 100', class: 'form-label my-2' %>
         <%= f.number_field :score, min: 1, max: 100, class: 'form-control' %>
     </div>
 
