@@ -1,6 +1,7 @@
 class WinesStrainsController < ApplicationController
   before_action :set_wines_strain, only: %i[ show edit update destroy ]
   before_action :validate_percentage, only: [:create]
+  before_action :authenticate_user!
 
   # GET /wines_strains or /wines_strains.json
   def index
