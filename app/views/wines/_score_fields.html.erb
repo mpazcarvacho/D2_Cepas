@@ -1,0 +1,17 @@
+<%# Partial to add strains and their percentages dinamically %>
+<%# DONE add bootstrap %>
+<%# TODO %>
+
+<div class="nested-fields form-inline mb-3 form-control pt-3">
+  <%= f.hidden_field :_destroy %>
+
+    <%= f.select :oenologist_id, oenologists_for_select, {}, class: 'form-select form-select-sm' %>
+    <div class="form-group mb-3">
+        <%= f.label :score, 'score', class: 'form-label' %>
+        <%= f.number_field :score, min: 1, max: 100, class: 'form-control' %>
+    </div>
+
+    <div>
+      <%= link_to "Remove", '#', class: "remove_fields"%>
+    </div>
+</div>
