@@ -15,21 +15,27 @@
         <% @wines.each do |wine| %>
           
           <tr>
-                  <th scope="row"><%= wine.id %></th>
+                  <td scope="row"><%= wine.id %></td>
                   <td><%= wine.name %></td>
                   <ul>
-                  <td><%  wine.wines_strains.each_with_index do |wine_strain, index| %>
+                    <td><%  wine.wines_strains.each_with_index do |wine_strain, index| %>
                   
                       <li class="bullet"><%= "#{index + 1} : #{wine_strain.strain.name} | #{wine_strain.percentage.to_i}%" %> </li>
                   
-                  <% end %></ul></td>
-                  <td>
+                        <% end %>
+                    </td>
+                  </ul>
+                  
                   <%# TODO SCORES Added %>
+                  <ul>
                   <td><%  wine.scores.each_with_index do |score, index| %>
                   
-                      <li class="bullet"><%= "#{index + 1} : #{score.oenologist.Name} | #{score.score}%" %> </li>
+                      <li class="bullet"><%= "#{index + 1} : #{score.oenologist.Name} | #{score.score}" %> </li>
                   
-                  <% end %></ul></td>
+                  <% end %>
+                  </td>
+                  </ul>
+
                   <%# _________________________________________ %>
                   <td>
                     <div class="btn btn_red">
