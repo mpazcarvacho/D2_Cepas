@@ -28,6 +28,13 @@
       <%= form.text_field :Country, class: 'form-control' %>
     </div>
 
+    <%# TODO add nested fields of job and magazine %>
+    <div class="form-group mb-3" >
+      <div class="btn btn-dark btn_red">
+        <%= link_to_add_association 'Add Job', form, :positions, class: "btn_red" %>
+      </div>
+    </div>
+
     <div class="actions">
       <%= form.submit 'Add new Oenologist', :class=>'btn btn-success btn-red' %>
     </div>

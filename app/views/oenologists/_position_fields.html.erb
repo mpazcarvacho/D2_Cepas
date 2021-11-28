@@ -1,0 +1,23 @@
+<%# Partial to add job and magazine to oenologists dinamically %>
+<%# TODO add bootstrap %>
+
+
+  <div class="nested-fields form-inline mb-3 form-control pt-3">
+  <div class="row">
+    <div class="col">
+    <%= f.hidden_field :_destroy %>
+
+      <%= f.label :job, 'Job', class: 'form-label m-3' %>
+      <%= f.select :job_id, jobs_for_select, {}, class: 'form-select form-select-sm m-3' %>
+    </div>
+
+    <div class="col">
+      <%= f.label :magazine, 'Magazine', class: 'form-label m-3' %>
+      <%= f.select :magazine_id, magazines_for_select, {}, class: 'form-select form-select-sm m-3' %>
+    </div>
+    <div>
+    </div>
+        <%= link_to "Remove", '#', class: "remove_fields m-3"%>
+    </div>
+  </div>
+

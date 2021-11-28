@@ -12,5 +12,6 @@ class Wine < ApplicationRecord
   has_many :scores
   has_many :oenologists, through: :scores, dependent: :destroy
   accepts_nested_attributes_for :scores, allow_destroy: true
+  
 
 end
