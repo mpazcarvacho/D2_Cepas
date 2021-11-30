@@ -34,7 +34,7 @@ class OenologistsController < ApplicationController
     
     respond_to do |format|
       if @oenologist.save
-        format.html { redirect_to @oenologist, notice: "Oenologist was successfully created." }
+        format.html { redirect_to oenologists_path, notice: "Oenologist was successfully created." }
         format.json { render :show, status: :created, location: @oenologist }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -49,7 +49,7 @@ class OenologistsController < ApplicationController
 
     respond_to do |format|
       if @oenologist.update(oenologist_params)
-        format.html { redirect_to @oenologist, notice: "Oenologist was successfully updated." }
+        format.html { redirect_to oenologists_path, notice: "Oenologist was successfully updated." }
         format.json { render :show, status: :ok, location: @oenologist }
       else
         format.html { render :edit, status: :unprocessable_entity }
