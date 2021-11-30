@@ -7,4 +7,5 @@ class Oenologist < ApplicationRecord
   has_many :scores
   has_many :wines, through: :scores, dependent: :destroy
 
+  accepts_nested_attributes_for :magazines, allow_destroy: true
 end

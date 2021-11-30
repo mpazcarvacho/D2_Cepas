@@ -19,8 +19,11 @@
     <div class="col position-relative">
       <%# add link to create new magazine %>
       <div class="btn btn-dark btn_red position-absolute top-50 start-50 translate-middle" id="new-magazine">
+      <div class="form-group mb-3" >
       <%# <%= link_to "New magazine", new_magazine_path, remote: true%>
       <%# <%= render 'form', magazine: @magazine %>
+      <%= link_to_add_association 'Add Magazine', form, :magazines, class: "btn_red" %>
+      </div>
     </div>
     <div>
         <%= link_to "Remove", '#', class: "remove_fields m-3"%>
