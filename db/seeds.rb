@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+# Preloading data to Job Table
+
+if(!Job.any?)
+  Job.create(name: "Editor")
+  Job.create(name: "Reviewer")
+  Job.create(name: "Writer")
+end
+
+#TODO add seed to test data.
 # 100.times do |i|
 #   Wine.create!(name: "Vino #{i+1}")
 #   Strain.create!(name: "Cepa #{i+1}")
@@ -16,11 +26,3 @@
 #   30.times do |x|
 #   WinesStrain.create!(wine: @wines.sample , strain_id: @strain.sample.id, percentage:10)
 # end
-
-# Preloading data to Job Table
-
-if(!Job.any?)
-  Job.create(name: "Editor")
-  Job.create(name: "Reviewer")
-  Job.create(name: "Writer")
-end

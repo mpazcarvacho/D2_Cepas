@@ -1,4 +1,4 @@
-<%# Add Bootstrap %>
+<%# DONE Add Bootstrap %>
 <div class="mt-3 form-control">
   <%= form_with(model: oenologist, local: true) do |form| %>
     <% if oenologist.errors.any? %>
@@ -28,7 +28,7 @@
       <%= form.text_field :Country, class: 'form-control' %>
     </div>
 
-    <%# TODO add nested fields of job and magazine %>
+    <%# DONE add nested fields of job and magazine %>
     <div class="form-group mb-3" >
       <div class="btn btn-dark btn_red">
         <%= link_to_add_association 'Add Job', form, :positions, class: "btn_red" %>
