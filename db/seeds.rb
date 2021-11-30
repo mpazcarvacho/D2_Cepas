@@ -9,13 +9,15 @@
 
 # Preloading data to Job Table
 
+# TODO add users
+
 if(!Job.any?)
   Job.create(name: "Editor")
   Job.create(name: "Reviewer")
   Job.create(name: "Writer")
 end
 
-#TODO add seed to test data.
+#TODO add seed to preload data.
 # 100.times do |i|
 #   Wine.create!(name: "Vino #{i+1}")
 #   Strain.create!(name: "Cepa #{i+1}")
