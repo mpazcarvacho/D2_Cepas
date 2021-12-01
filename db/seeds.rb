@@ -8,9 +8,6 @@
 
 
 # Preloading data to Job Table
-
-# TODO add users
-
 if(!Job.any?)
   Job.create(name: "Editor")
   Job.create(name: "Reviewer")
@@ -18,13 +15,13 @@ if(!Job.any?)
 end
 
 #TODO add seed to preload data.
-# 100.times do |i|
-#   Wine.create!(name: "Vino #{i+1}")
-#   Strain.create!(name: "Cepa #{i+1}")
-#   puts "Cepa y Vino #{i+1}"
-#   end
-#   @wines = Wine.all
-#   @strain = Strain.all
-#   30.times do |x|
-#   WinesStrain.create!(wine: @wines.sample , strain_id: @strain.sample.id, percentage:10)
-# end
+100.times do |i|
+  Wine.create!(name: "Vino #{i+1}")
+  Strain.create!(name: "Cepa #{i+1}")
+  puts "Cepa y Vino #{i+1}"
+  end
+  @wines = Wine.all
+  @strain = Strain.all
+  30.times do |x|
+  WinesStrain.create!(wine: @wines.sample , strain_id: @strain.sample.id, percentage:10)
+end

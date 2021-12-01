@@ -1,7 +1,9 @@
 class WinesStrainsController < ApplicationController
   before_action :set_wines_strain, only: %i[ show edit update destroy ]
-  before_action :validate_percentage, only: [:create]
   before_action :authenticate_user!
+
+  # 01/12 method to validate percentage adding up to 100 disabled
+  # before_action :validate_percentage, only: [:create]
 
   # GET /wines_strains or /wines_strains.json
   def index
