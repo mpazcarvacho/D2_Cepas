@@ -41,6 +41,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # DONE gen added to test devise login with rspec 01/12 https://github.com/thoughtbot/factory_bot_rails
+  gem 'factory_bot_rails', '5.0.2'
+
 end
 
 group :development do
@@ -62,8 +65,8 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   # DONE Rspec gems
-  gem 'rspec-rails'
-  gem 'rails-controller-testing'
+  gem 'rspec-rails', '3.8.2'
+  gem 'rails-controller-testing', '1.0.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
