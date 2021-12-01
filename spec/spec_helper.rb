@@ -28,19 +28,7 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
-  # DONE code to test devise 01/12
-  # Configure to include Devise helper/ Warden helper
-  # These helpers contribute to create login method
-  # Warden is what Devise is based on. It is a general Rack authentication framework
-  # https://yuta-san.medium.com/a-simple-login-test-with-rspec-devise-factorybot-in-rails-29aeb2ebc4ab
-  # ----------------------------------------------
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
-  end
 
-  config.include Devise::Test::ControllerHelpers, :type => :controller
-  config.include Warden::Test::ControllerHelpers
-  #----------------------------------------------
 
   # rspec-mocks config goes here. You can use an alternate test double
   # library (such as bogus or mocha) by changing the `mock_with` option here.

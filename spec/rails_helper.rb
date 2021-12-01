@@ -31,6 +31,9 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+
+
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -58,4 +61,18 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+      # DONE code to test devise 01/12
+  # Configure to include Devise helper/ Warden helper
+  # These helpers contribute to create login method
+  # Warden is what Devise is based on. It is a general Rack authentication framework
+  # https://yuta-san.medium.com/a-simple-login-test-with-rspec-devise-factorybot-in-rails-29aeb2ebc4ab
+  # ----------------------------------------------
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include Warden::Test::Helpers
+  #----------------------------------------------
 end

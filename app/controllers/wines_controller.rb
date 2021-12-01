@@ -5,6 +5,9 @@ class WinesController < ApplicationController
   # GET /wines or /wines.json
   def index
     @wines = Wine.all
+
+    # TODO add actions to be tested
+    # some_actions_to_be_tested
   end
 
   # GET /wines/1 or /wines/1.json
